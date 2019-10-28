@@ -3,23 +3,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="style.css">
 <title>Sam's blog</title>
-<style>
-	body{
-		margin:1em auto;
-		max-width:40em;
-		padding:0 .62em;
-		font:1.2em/1.62 sans-serif;
-	}
-	h1,h2,h3 {
-		line-height:1.2;
-	}
-	@media print{
-		body{
-			max-width:none
-		}
-	}
-</style>
+
 <header>
 	<div class="w3-panel w3-blue">
 	<h1>Sam's blog</h1>
@@ -28,9 +14,10 @@
 	
 	
 <article id="Adding EXIF metadata to digitised photos with Linux CLI">
-	<header>
-	<div class="w3-panel w3-green">
-	<h1>Adding EXIF metadata to digitised photos with Linux CLI.</h1>
+	
+	<div class="w3-panel <!--w3-green-->">
+	<h2>Adding EXIF metadata to digitised photos with Linux CLI.</h2>
+	
 	<time datetime= "2019-03-23">March 23, 2019</time>
 	<aside>	<p>Today I got a few films from high school digitised, after they came off the scanner they didn’t have any metadata relating to the date in which they were actually taken.</p>
 		<p>I wanted to add a bit of metadata so they would be sensibly arranged in my photo content management system – I had to guess a bit. Within the nearest year was good enough.</p>
@@ -40,14 +27,26 @@
 		<p>Here is a one-liner I found to convert all .jpegs in a folder to have a date of 2007. It will also overwrite the existing image, so exercise caution!<p>
 		<p><blockquote><code>exiftool '-datetimeoriginal=2007:03:01 12:00:00' -overwrite_original  *.jpg</code><blockquote>
 	</div>
-</header>
-<h2>Seriously</h2>
-<p>You keep forgetting. Let me describe the perfect-ass website:
-<ul>
-<li>lightweight and loads fast.
-<li>Fits on all your screens.
-<li>Looks the same in all your browsers.
-<li>
-<li>
-</ul>
-</article>
+
+<article id="Finding dimensions off a scale drawing with GIMP">
+	
+	<div class="w3-panel">
+	<h2>Finding dimensions off a scale drawing with GIMP</h2>
+	
+	<time datetime= "2019-01-07">January 7, 2019</time>
+	<aside>		
+		<p>Today I was trying to figure out whether or not a bicycle pannier rack would fit my bicycle. I’m thinking of cycling to work a bit in an effort to curb last years 1274.8L of petrol, and to improve my fitness a bit. Recently half of the Kamo to Whangarei cycleway opened, and I feel a bit safer going to work by bicycle now.</p>
+		<p>I found an nice pannier rack, fair price, alloy, has a spring-a-ma-thing to hold things on. There was even a scale drawing on the manufacturer’s website to help me…</p>
+		<img src="media/bike1.png" alt="Rack">
+		<p>…but unfortunately the dimension I was after was not listed.</p>
+		<img src="media/bike2.png" alt="Rack">
+		<p>GIMP has a tool where you can measure angles and lengths (Shift-M), or the drawing compass icon on the toolbar.  This was used first to compare two known dimensions against each other to find a common ratio to convert pixels of the image to the dimension in mm.  This step was also important to verify that the technical drawing was to scale, a cheap sanity test before proceeding further.</p>
+		<p>With the known ratio of pixels:mm conversion I dragged out the length with the measurement tool to find the minimum length the rear dropout could be from the top mounting point while still having a level top. The minimum distance is 210±20mm, and the measurement worked out to about 180mm, heaps of room!</p>
+		<p>With any luck and a fair breeze it will turn out as nice as this one.</p>
+		<div class="w3-container">
+		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Vittorio_touring_bike_2014.jpg/640px-Vittorio_touring_bike_2014.jpg">
+		<br><a href="https://commons.wikimedia.org/wiki/User:Mpotse">Mpotse</a>, <a href="https://commons.wikimedia.org/wiki/File:Vittorio_touring_bike_2014.jpg">Vittorio touring bike 2014</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" rel="license">CC BY-SA 4.0</a> 
+		</div>
+		<p>Edit 12/1/2019: After posting this article to Twitter, I got this excellent reply from @jigpu (see below) explaining how the ratio of pixels/mm can be changed in the “Image -> Print Size” menu function. After that is set then you can just use the measurement tool to measure ‘mm’ (adjusted in the bottom left, as pictured below). A great tip to save time and a lot of mathematics if you’re taking a number of measurements. Thanks @jigpu!</p>
+		<blockquote><em>"Pro Tip: After working out the pixels per mm as described, set it in the “Image -> Print Size” menu and then change the units drop-down inside the status bar from “px” to “mm”. Now the measure tool will directly report real-world size — no further math required! Inches too 🙂" — Jason Gerecke (@jigpu) January 8, 2019</em></blockquote>
+	</div>
